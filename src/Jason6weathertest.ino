@@ -30,7 +30,6 @@
 #define CF_CG20 &Crafty_Girls_Regular_20
 char oledbuf[240];   // for sprintf buffer
 char tempchar[80] ;  // for dtostrf() conversions
-String stringbuf;
 
 TFT_eSPI tft = TFT_eSPI(135, 240); // Invoke custom library
 
