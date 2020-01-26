@@ -139,3 +139,62 @@ Change 3:  optionally add error checking to the deserialization call:
   }
 ```
 ## Section 2:  Displaying Weather Data to the TTGO-T-Display Built-in Screen  
+
+Using the built in display requires the installation of the libraries kept at https://github.com/Xinyuan-LilyGO/TTGO-T-Display.  First the libraries must be installed, then minor change is needed to add an include file to one of the library headers.  It is well described in the library link, but basically consists of commenting one line and uncommenting another in the TFT_eSPI/User_Setup_Select.h library file.
+
+Once the libraries are installed, include the following files:
+```
+//************************************* TTGO-T-Display Libraries *************************************************************
+#include <TFT_eSPI.h>
+#include <SPI.h>
+#include <Wire.h>
+#include <Button2.h>
+
+TFT_eSPI tft = TFT_eSPI(135, 240);
+```
+Optionally, custom fonts can be installed.  To install a font, the font's bitmap file needs to be placed in the library\TFT_eSPI\Fonts\Custom folder.  A few sample fonts come with the library.  The new fonts will also need to be included in the User_Custom_Fonts.h file as follows:
+```
+#ifdef LOAD_GFXFF
+
+  // New custom font file #includes
+  #include <Fonts/Custom/Orbitron_Light_24.h> // CF_OL24
+  #include <Fonts/Custom/Orbitron_Light_32.h> // CF_OL32
+  #include <Fonts/Custom/Roboto_Thin_24.h>    // CF_RT24
+  #include <Fonts/Custom/Satisfy_24.h>        // CF_S24
+  #include <Fonts/Custom/Yellowtail_32.h>     // CF_Y32
+  #include <Fonts/Custom/Crafty_Girls_Regular_16.h>  //CF_CG16
+  #include <Fonts/Custom/Crafty_Girls_Regular_20.h>  //CF_CG20
+  #include <Fonts/Custom/Crafty_Girls_Regular_24.h>  //CF_CG24
+  #include <Fonts/Custom/DSEG7_Classic_Bold_24.h>  //CF_DSEG24
+  #include <Fonts/Custom/DSEG7_Classic_Bold_36.h>  //CF_DSEG36
+  #include <Fonts/Custom/Aclonica_Regular_24.h>  //CF_Aclon24
+
+#endif
+
+// Shorthand references - any coding scheme can be used, here CF_ = Custom Font
+// The #defines below MUST be added to sketches to use shorthand references, so
+// they are only put here for reference and copy+paste purposes!
+/*
+#define CF_OL24 &Orbitron_Light_24
+#define CF_OL32 &Orbitron_Light_32
+#define CF_RT24 &Roboto_Thin_24
+#define CF_S24  &Satisfy_24
+#define CF_Y32  &Yellowtail_32
+#define CF_DSEG24 &DSEG7_Classic_Bold_24
+#define CF_DSEG36 &DSEG7_Classic_Bold_36
+#define CF_Aclon24 &Aclonica_Regular_24
+#define CF_CG16 &Crafty_Girls_Regular_16  
+#define CF_CG20 &Crafty_Girls_Regular_20
+#define CF_CG24 &Crafty_Girls_Regular_24
+*/
+```
+
+Creating custom fonts can be done at several websites with online tools and with a command line tool which Adafruit provides in their GFX library.  A few good links for online converters are:
+* http://oleddisplay.squix.ch/#/home
+* https://rop.nl/truetype2gfx/
+* http://www.rinkydinkelectronics.com/t_make_font_file.php
+* https://github.com/adafruit/Adafruit-GFX-Library
+
+
+
+
