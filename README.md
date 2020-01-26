@@ -115,7 +115,7 @@ int id = doc["id"]; // 0
 const char* name = doc["name"]; // "Hayward"
 int cod = doc["cod"]; // 200
 ```
-5) Tweaking the code from the assistant.  You will need to make two mandatory and one optional change to the code:  
+5) Tweak the code from the assistant.  You will need to make two mandatory and one optional change to the code:  
 
 Change 1:  add more padding to the variable capacity:
 ```
@@ -126,4 +126,14 @@ Change 2:  this line of code needs to change as follows:
 ```
 //deserializeJson(doc, json);  //from this
 deserializeJson(doc, client);  //to this.  You want to parse the data the client recieved.
+```
+Change 3:  optionally add error checking to the deserialization call:
+```
+  DeserializationError error = deserializeJson(doc, client);
+  if (error)
+  {
+    Serial.print(F("deserializeJson() failed: "));
+    Serial.println(error.c_str());
+    //return;  //uncommented to turn it into a hard fail instead of warning
+  }
 ```
