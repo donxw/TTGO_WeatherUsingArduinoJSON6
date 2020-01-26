@@ -1,5 +1,5 @@
 # TTGO_WeatherUsingArduinoJSON6  
-Using a TTGO T Display ESP32 to display weather using the ArduinoJSON 6 library
+##How to use a TTGO T Display ESP32 and ArduinoJason 6 library to display current weather
 ---
 Hardware:  https://github.com/Xinyuan-LilyGO/TTGO-T-Display  
 Purchase:  https://www.aliexpress.com/item/33048962331.html?spm=a2g0o.productlist.0.0.1b627a05OAaRf9&algo_pvid=b48e0ab9-ee06-4d87-a31e-0962d569f0f4&algo_expid=b48e0ab9-ee06-4d87-a31e-0962d569f0f4-1&btsid=a7eaf880-8e7c-437a-be59-8efd9408aa30&ws_ab_test=searchweb0_0,searchweb201602_5,searchweb201603_55
