@@ -8,7 +8,7 @@ This code demonstrates a basic program that retrieves weather from openweatherma
 ## Section 1:  Getting the Weather data and Parsing it to Arduino Variables  
 The weather data is available through api.openweathermap.org.  To get weather data sent to your code, you will need an api key.  Go to https://openweathermap.org/api, scroll to the bottom and follow the instructions to get started.  The site provides a lot of useful examples on how to structure your weather request here:  https://openweathermap.org/current
 
-I used the request URL using Zipcode:  Sample from the website -  http://samples.openweathermap.org/data/2.5/weather?zip=94040,us&appid=b6907d289e10d714a6e88b30761fae22.  You can use this to get a sample JSON output from the site.
+Here is a sample url to get weather from the website -  http://samples.openweathermap.org/data/2.5/weather?zip=94040,us&appid=b6907d289e10d714a6e88b30761fae22.  You can use this to get a sample JSON output from the site.
 
 The URL I used is this:  http://api.openweathermap.org/data/2.5/weather?zip=94541&units=imperial&APPID=xxxxxxxxxxxxxxxxxxxxxxxxxxx.
 If you put this into a browser with your own zip and API, it will return JSON formatted data containing the current weather:
