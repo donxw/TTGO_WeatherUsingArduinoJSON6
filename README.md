@@ -122,7 +122,7 @@ Change 1:  add more padding to the variable "capacity":
 // update the padding from 280 to 1333 per the recommended size for Visual Studio x64
 const size_t capacity = JSON_ARRAY_SIZE(1) + JSON_OBJECT_SIZE(1) + 2*JSON_OBJECT_SIZE(2) + JSON_OBJECT_SIZE(4) + JSON_OBJECT_SIZE(5) + JSON_OBJECT_SIZE(6) + JSON_OBJECT_SIZE(13) + 1333;  
 ```
-Change 2:  this line of code needs to change as follows:
+Change 2:  update the deserialize parameter to client instead of json:
 ```
 /**** Comment out or delete this line  *********************/
 //const char* json = "{\"coord\":{\"lon\":-122.09,\"lat\":37.67},\"weather\":[{\"id\":800,\"main\":\"Clear\",\"description\":\"clear sky\",\"icon\":\"01d\"}],\"base\":\"stations\",\"main\":{\"temp\":61.5,\"feels_like\":60.67,\"temp_min\":57,\"temp_max\":66.2,\"pressure\":1020,\"humidity\":93},\"visibility\":11265,\"wind\":{\"speed\":6.93,\"deg\":270},\"clouds\":{\"all\":1},\"dt\":1579996765,\"sys\":{\"type\":1,\"id\":4322,\"country\":\"US\",\"sunrise\":1579965455,\"sunset\":1580001801},\"timezone\":-28800,\"id\":0,\"name\":\"Hayward\",\"cod\":200}";
@@ -131,7 +131,7 @@ Change 2:  this line of code needs to change as follows:
 //deserializeJson(doc, json);  //from this
 deserializeJson(doc, client);  //to this.  You want to parse the data the client recieved.
 ```
-Change 3:  optionally add error checking to the deserialization call:
+Change 3:  optionally add error checking to the deserialization call (recommended in the jsonarduino examples):
 ```
   DeserializationError error = deserializeJson(doc, client);
   if (error)
