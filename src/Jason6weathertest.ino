@@ -51,20 +51,14 @@ WebServer server(80);
 #endif
 
 #include <time.h>
-//#include "credentials.h"
-#include <WiFiManager.h>  //I copied the library from the arduino folder to this folder to hack it to work for ESP32
+#include <WiFiManager.h>  //modified to compile for ESP32
 
 // Weather Variables
-char *servername = "api.openweathermap.org"; // remote server we will connect to
-//int iterations = 0;
-//int weatherID = 0;
-//String result, humid, loc, temp, weat, desc, tim, sunr, suns;
-
-//String ZipCode = "73104,us"; //OKC
+char *servername = "api.openweathermap.org"; // weather data source
 String ZipCode = "94304,us"; //Palo Alto
-//String ZipCode = "94541,us"; //Hayward
 String APIKEY = "xxxEnterYourAPIKeyHerexxx";
 
+// WiFiClient Parameters
 WiFiClient client;
 const int httpPort = 80;
 
@@ -77,10 +71,10 @@ void setup()
 
   //************************************* Initialize the Screen **************************************************
   tft.init();
-  tft.setRotation(1);                                          // set rotation 
-  tft.setTextColor(TFT_WHITE, TFT_RED);     // Set font color
-  tft.fillScreen(TFT_RED);                                 // Clear screen
-  tft.setFreeFont(CF_CG20);                           // Select the font:  for print and printf or with GFXFF
+  tft.setRotation(1);                       // set rotation 
+  tft.setTextColor(TFT_WHITE, TFT_RED);     // Set font color - white text on red
+  tft.fillScreen(TFT_RED);                  // Clear screen
+  tft.setFreeFont(CF_CG20);                 // Select the font:  for print and printf or with GFXFF
   //***************************************************************************************************************
 
   // Initialize wifi
@@ -88,7 +82,7 @@ void setup()
   WiFiManager wifiManager;
   wifiManager.autoConnect("AutoConnectAP");
 
-  //display note to set up wifi
+  //display message on screen for how to enter wifi credentials
   tft.drawCentreString("Set Up Wifi @", tft.width()/2, 30, GFXFF);
   tft.drawCentreString("AutoConnectAP", tft.width()/2, 55, GFXFF);
 
@@ -100,11 +94,9 @@ void setup()
     Serial.print(".");
   }
 
-  //delay(5000);  // just for debug
-  tft.fillScreen(TFT_RED);
+  tft.fillScreen(TFT_RED); // clear screen
 //*************************************  Get Weather ***********************************************************
   // Connect to HTTP server
-
   if (!client.connect(servername, httpPort))
   {
     return;
@@ -166,7 +158,6 @@ void setup()
     //return;  //commented this to turn it into a warning instead of a hard fail
   }
   
-
   //**************************************************** from https://arduinojson.org/v6/assistant/ **********************************************************************
   // Extract values
   float coord_lon = doc["coord"]["lon"]; // -97.41
@@ -209,10 +200,11 @@ void setup()
   int cod = doc["cod"];           // 200
   //*********************************************************************************************************************************************************************
 
-  Serial.println(name);
-  Serial.println(main_temp);
-  Serial.println(main_humidity);
-  Serial.println(weather_0_description);
+ //************ Display Weather to the TFT Screen *******************************/
+  //Serial.println(name);
+  //Serial.println(main_temp);
+  //Serial.println(main_humidity);
+  //Serial.println(weather_0_description);
 
   tft.fillScreen(TFT_WHITE);
   tft.setTextColor(TFT_BLACK, TFT_WHITE);  //Black Text on White Background
