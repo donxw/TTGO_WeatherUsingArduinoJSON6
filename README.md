@@ -8,17 +8,16 @@ This code demonstrates a basic program that retrieves weather from openweatherma
 ## Section 1:  Getting the Weather data and Parsing it to Arduino Variables you can use  
 The weather data is available through api.openweathermap.org.  To get weather data sent to your code, you will need an api key.  Go to https://openweathermap.org/api, scroll to the bottom and follow the instructions to get started.  The site provides a lot of useful examples on how to structure your weather request here:  https://openweathermap.org/current
 
-I used the request URL using Zipcode:  Sample from the website -  http://samples.openweathermap.org/data/2.5/weather?zip=94040,us&appid=b6907d289e10d714a6e88b30761fae22
+I used the request URL using Zipcode:  Sample from the website -  http://samples.openweathermap.org/data/2.5/weather?zip=94040,us&appid=b6907d289e10d714a6e88b30761fae22.  You can use this to get a sample JSON output from the site.
 
 The URL I used is this:  http://api.openweathermap.org/data/2.5/weather?zip=94541&units=imperial&APPID=xxxxxxxxxxxxxxxxxxxxxxxxxxx.
-If you put this into a browser, it will return JSON formatted data containing the current weather:
+If you put this into a browser with your own zip and API, it will return JSON formatted data containing the current weather:
 ```
 {"coord":{"lon":-122.09,"lat":37.67},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":61.5,"feels_like":60.67,"temp_min":57,"temp_max":66.2,"pressure":1020,"humidity":93},"visibility":11265,"wind":{"speed":6.93,"deg":270},"clouds":{"all":1},"dt":1579996765,"sys":{"type":1,"id":4322,"country":"US","sunrise":1579965455,"sunset":1580001801},"timezone":-28800,"id":0,"name":"Hayward","cod":200}
 ```
-Take note of this returned JSON data, because it will be used later by an assistant program at https://arduinojson.org to create parsing code.  
-Here is how you can get the JSON data into an Arduino project.  There are two steps:  
-1) Send the api url string to the website
-2) Parse the JSON data that is returned
+*Take note of this returned JSON data, because it will be used later by an assistant program at https://arduinojson.org to create parsing code.*  
+
+Here is how to send a URL and recieve JSON data into an Arduino project.  
 ---
 **Sending an HTTP request (send the url) from Arduino**
 
