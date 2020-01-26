@@ -66,3 +66,53 @@ This next step heavily relies on the the JSON Assistant located here:  https://a
 2)  navigate to the JSON Assistant - https://arduinojson.org/v6/assistant/
 3)  paste in the JSON data - example data:  
 {"coord":{"lon":-122.09,"lat":37.67},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":61.5,"feels_like":60.67,"temp_min":57,"temp_max":66.2,"pressure":1020,"humidity":93},"visibility":11265,"wind":{"speed":6.93,"deg":270},"clouds":{"all":1},"dt":1579996765,"sys":{"type":1,"id":4322,"country":"US","sunrise":1579965455,"sunset":1580001801},"timezone":-28800,"id":0,"name":"Hayward","cod":200}
+4) the JSON assistant will return the parsing code which is very nearly usable as is:
+```
+const size_t capacity = JSON_ARRAY_SIZE(1) + JSON_OBJECT_SIZE(1) + 2*JSON_OBJECT_SIZE(2) + JSON_OBJECT_SIZE(4) + JSON_OBJECT_SIZE(5) + JSON_OBJECT_SIZE(6) + JSON_OBJECT_SIZE(13) + 280;
+DynamicJsonDocument doc(capacity);
+
+const char* json = "{\"coord\":{\"lon\":-122.09,\"lat\":37.67},\"weather\":[{\"id\":800,\"main\":\"Clear\",\"description\":\"clear sky\",\"icon\":\"01d\"}],\"base\":\"stations\",\"main\":{\"temp\":61.5,\"feels_like\":60.67,\"temp_min\":57,\"temp_max\":66.2,\"pressure\":1020,\"humidity\":93},\"visibility\":11265,\"wind\":{\"speed\":6.93,\"deg\":270},\"clouds\":{\"all\":1},\"dt\":1579996765,\"sys\":{\"type\":1,\"id\":4322,\"country\":\"US\",\"sunrise\":1579965455,\"sunset\":1580001801},\"timezone\":-28800,\"id\":0,\"name\":\"Hayward\",\"cod\":200}";
+
+deserializeJson(doc, json);
+
+float coord_lon = doc["coord"]["lon"]; // -122.09
+float coord_lat = doc["coord"]["lat"]; // 37.67
+
+JsonObject weather_0 = doc["weather"][0];
+int weather_0_id = weather_0["id"]; // 800
+const char* weather_0_main = weather_0["main"]; // "Clear"
+const char* weather_0_description = weather_0["description"]; // "clear sky"
+const char* weather_0_icon = weather_0["icon"]; // "01d"
+
+const char* base = doc["base"]; // "stations"
+
+JsonObject main = doc["main"];
+float main_temp = main["temp"]; // 61.5
+float main_feels_like = main["feels_like"]; // 60.67
+int main_temp_min = main["temp_min"]; // 57
+float main_temp_max = main["temp_max"]; // 66.2
+int main_pressure = main["pressure"]; // 1020
+int main_humidity = main["humidity"]; // 93
+
+int visibility = doc["visibility"]; // 11265
+
+float wind_speed = doc["wind"]["speed"]; // 6.93
+int wind_deg = doc["wind"]["deg"]; // 270
+
+int clouds_all = doc["clouds"]["all"]; // 1
+
+long dt = doc["dt"]; // 1579996765
+
+JsonObject sys = doc["sys"];
+int sys_type = sys["type"]; // 1
+int sys_id = sys["id"]; // 4322
+const char* sys_country = sys["country"]; // "US"
+long sys_sunrise = sys["sunrise"]; // 1579965455
+long sys_sunset = sys["sunset"]; // 1580001801
+
+int timezone = doc["timezone"]; // -28800
+int id = doc["id"]; // 0
+const char* name = doc["name"]; // "Hayward"
+int cod = doc["cod"]; // 200
+```
+
