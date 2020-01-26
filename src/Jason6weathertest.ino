@@ -62,9 +62,9 @@ WebServer server(80);
 
 // Weather Variables
 char *servername = "api.openweathermap.org"; // remote server we will connect to
-int iterations = 0;
-int weatherID = 0;
-String result, humid, loc, temp, weat, desc, tim, sunr, suns;
+//int iterations = 0;
+//int weatherID = 0;
+//String result, humid, loc, temp, weat, desc, tim, sunr, suns;
 
 //String ZipCode = "73104,us"; //OKC
 String ZipCode = "94304,us"; //Palo Alto
@@ -106,7 +106,7 @@ void setup()
     Serial.print(".");
   }
 
-  delay(5000);  // just for debug
+  //delay(5000);  // just for debug
   tft.fillScreen(TFT_RED);
 //*************************************  Get Weather ***********************************************************
   // Connect to HTTP server
