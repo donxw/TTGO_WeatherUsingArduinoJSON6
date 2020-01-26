@@ -41,23 +41,21 @@ Step 2)  Connect to the network and send the url.
 
 * Sending the data is trickier - the arduino WiFiClient reference above does a good job.  I used the example from Benoit Blanchon at arduinojason.org.  This web site makes JASON parsing very easy and I'll get to that later.  The code to send the data is like this:
 
-- a. initialize the client and assign a port in after the include statements and before setup()
-    WiFiClent client;
-    const int httpPort = 80;
-    char *servername = "api.openweathermap.org";
-    
-- b. after your code to connect to the network, connect using
-
+- initialize the client and assign a port in after the include statements and before the setup() code
+```
+  WiFiClent client;
+  const int httpPort = 80;
+  char *servername = "api.openweathermap.org";
+```    
+- after your code to connect to the network, connect either in setup() or loop():
+```
     client.connect(servername, httpPort);   //In the actual code there is some error checking, but basically this line connects you to api.openweathermap.org
-    
-    use client.print to send the request as follows:
-    
-      String url = "/data/2.5/weather?zip=" + ZipCode + "&units=imperial&APPID=" + APIKEY;
-      
-      client.print(String("GET ") + url + " HTTP/1.1\r\n");
-      
-      client.print("Host: api.openweathermap.org\r\n");
-      
-      client.print("Connection: close\r\n\r\n");
-    
+```    
+- use client.print to send the request as follows:
+```    
+  String url = "/data/2.5/weather?zip=" + ZipCode + "&units=imperial&APPID=" + APIKEY;
+  client.print(String("GET ") + url + " HTTP/1.1\r\n");
+  client.print("Host: api.openweathermap.org\r\n");
+  client.print("Connection: close\r\n\r\n");
+```  
 
