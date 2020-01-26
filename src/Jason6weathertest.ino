@@ -19,7 +19,7 @@
 #include <TFT_eSPI.h>
 #include <SPI.h>
 #include <Wire.h>
-#include <Button2.h>  //for future use of the built in buttons
+//#include <Button2.h>  //for future use of the built in buttons
 
 //custom fonts - must be located in the library under  "TFT_eSPI\Fonts\Custom" folder
 // a #include must also be added to the "User_Custom_Fonts.h" file in the "TFT_eSPI\User_Setups" folder.
