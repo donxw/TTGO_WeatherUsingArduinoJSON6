@@ -6,7 +6,7 @@ Purchase:  https://www.aliexpress.com/item/33048962331.html?spm=a2g0o.productlis
 
 This code will demonstrate a very basic program that retrieves weather from openweathermap.org and parses the resulting data using ArduinoJson 6 and displays it onto a TFT Display.
 
-**Section 1:  Getting Weather data**  
+**Section 1:  Getting the Weather data and Parsing it to Arduino Variables you can use**  
 The weather data is available through api.openweathermap.org.  To get weather data sent to your code, you will need an api key.  Go to https://openweathermap.org/api, scroll to the bottom and follow the instructions to get started.  The site provides a lot of useful examples on how to structure your weather request here:  https://openweathermap.org/current
 
 I used the request URL using Zipcode:  Sample from the website -  http://samples.openweathermap.org/data/2.5/weather?zip=94040,us&appid=b6907d289e10d714a6e88b30761fae22
@@ -19,7 +19,7 @@ If you put this into a browser, it will return JSON formatted data containing th
 Using a browser is straight forward, but there are two hurdles to use an arduino
 1) Sending the api url string to the website
 2) Parsing the JSON data that is returned
-
+---
 **Sending an HTTP request (send the url) from Arduino**
 
 Step 1)  Include the right libraries.  Arduino.cc has a good tutorial for installing libraries.  For and ESP32 TTGOI used:
@@ -58,5 +58,5 @@ Step 2)  Connect to the network and send the api request in a url.
   client.print("Host: api.openweathermap.org\r\n");
   client.print("Connection: close\r\n\r\n");
 ```  
-
+---
 **Parsing the returned JSON data**
