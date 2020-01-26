@@ -228,5 +228,5 @@ And now the weather variables can be displayed onto the screen.  There are a lar
 ```
 
 ## Summary
-This example just scratches the surface, but is enough to get a basic program which can get data from a website through an API URL, parse the resulting JSON data then display it on a TFT screen.
+This example just scratches the surface, but is enough to get a basic program capable of obtaining data from a website through an API URL, parse the resulting JSON data then display it on a TFT screen.
 
