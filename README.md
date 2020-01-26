@@ -32,24 +32,25 @@ Step 1)  Include the right libraries.  Arduino.cc has a good tutorial for instal
 WiFiManager is available here and has great examples: https://github.com/zhouhan0126/WIFIMANAGER-ESP32  
 *I had to make a mod to get it to compile in Arduino on an ESP32 board. The mod was to change all instances of HTTP_HEAD[] to HTTP_HEAD_HTML[] in both the WifiManager.cpp and WiFiManager.h files.  It was fine in Platform IO without any modifications.*
 
-Step 2)  Connect to the network and send the url.
+Step 2)  Connect to the network and send the api request in a url.
 * Connecting to the network is just these two lines in the setup() code:
 ```
   WiFiManager wifiManager;
   wifiManager.autoConnect("AutoConnectAP");
 ```  
 
-* Sending the data is trickier - the arduino WiFiClient reference above does a good job.  I used the example from Benoit Blanchon at arduinojason.org.  This web site makes JASON parsing very easy and I'll get to that later.  The code to send the data is like this:
+* Sending the url is trickier - the arduino WiFiClient reference above does a good job.  I used the example from Benoit Blanchon at arduinojason.org.  
 
-- initialize the client and assign a port in after the include statements and before the setup() code
+- initialize the client before the setup() code
 ```
   WiFiClent client;
   const int httpPort = 80;
   char *servername = "api.openweathermap.org";
 ```    
-- after your code to connect to the network, connect either in setup() or loop():
+- after the code to connect to the network, connect either in setup() or loop():
 ```
-    client.connect(servername, httpPort);   //In the actual code there is some error checking, but basically this line connects you to api.openweathermap.org
+  client.connect(servername, httpPort);   
+  //In the actual code there is some error checking, but basically this line connects you to api.openweathermap.org
 ```    
 - use client.print to send the request as follows:
 ```    
