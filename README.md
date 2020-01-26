@@ -33,12 +33,13 @@ WiFiManager.h files.  It was fine in Platform IO without any modifications. */
 ```
 
 Step 2)  Connect to the network and send the url.
-- Connecting to the network is just these two lines in the setup() code:
-
+* Connecting to the network is just these two lines in the setup() code:
+```
   WiFiManager wifiManager;
   wifiManager.autoConnect("AutoConnectAP");
-  
-- Sending the data is trickier - the arduino WiFiClient reference above does a good job.  I used the example from Benoit Blanchon at arduinojason.org.  This web site makes JASON parsing very easy and I'll get to that later.  The code to send the data is like this:
+```  
+
+* Sending the data is trickier - the arduino WiFiClient reference above does a good job.  I used the example from Benoit Blanchon at arduinojason.org.  This web site makes JASON parsing very easy and I'll get to that later.  The code to send the data is like this:
 
 - a. initialize the client and assign a port in after the include statements and before setup()
     WiFiClent client;
