@@ -3,7 +3,7 @@
 Hardware:  https://github.com/Xinyuan-LilyGO/TTGO-T-Display  
 Purchase:  https://www.aliexpress.com/item/33048962331.html?spm=a2g0o.productlist.0.0.1b627a05OAaRf9&algo_pvid=b48e0ab9-ee06-4d87-a31e-0962d569f0f4&algo_expid=b48e0ab9-ee06-4d87-a31e-0962d569f0f4-1&btsid=a7eaf880-8e7c-437a-be59-8efd9408aa30&ws_ab_test=searchweb0_0,searchweb201602_5,searchweb201603_55
 
-This code demonstratse a basic program that retrieves weather from openweathermap.org and parses the resulting data using ArduinoJson 6 then displays it onto the built in TFT Display on the TTGO ESP32 board.
+This code demonstrates a basic program that retrieves weather from openweathermap.org, parses the resulting data into variables then displays it onto the built in TFT Display on the TTGO ESP32 board.
 
 ## Section 1:  Getting the Weather data and Parsing it to Arduino Variables you can use  
 The weather data is available through api.openweathermap.org.  To get weather data sent to your code, you will need an api key.  Go to https://openweathermap.org/api, scroll to the bottom and follow the instructions to get started.  The site provides a lot of useful examples on how to structure your weather request here:  https://openweathermap.org/current
@@ -57,5 +57,7 @@ Step 2)  Connect to the network and send the api request in a url.
   client.print("Host: api.openweathermap.org\r\n");
   client.print("Connection: close\r\n\r\n");
 ```  
+- if all went well, the client variable will receive and store the JSON data returned from api.openweathermap.org.  For clarity, the error checking is not shown in this readme file.  The next step is extracting this data and assigning it to variables that can be used.
 ---
-**Parsing the returned JSON data**
+**Parsing the returned JSON data to Arduino variables**  
+This next step heavily relies on the 
