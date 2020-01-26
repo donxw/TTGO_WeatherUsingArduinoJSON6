@@ -143,7 +143,7 @@ Change 3:  optionally add error checking to the deserialization call (recommende
 ```
 ## Section 2:  Displaying Weather Data to the TTGO-T-Display Built-in Screen  
 
-Using the built in display requires the installation of the libraries kept at https://github.com/Xinyuan-LilyGO/TTGO-T-Display.  First the libraries must be installed, then minor change is needed to add an include file to one of the library headers.  It is well described in the library link, but basically consists of commenting one line and uncommenting another in the TFT_eSPI/User_Setup_Select.h library file.
+Using the built in display requires the installation of the libraries kept at https://github.com/Xinyuan-LilyGO/TTGO-T-Display.  First the libraries must be installed, then a minor change is needed to add an include file to one of the library headers.  It is well described in the library link, but basically consists of commenting one line and uncommenting another in the TFT_eSPI/User_Setup_Select.h library file.
 
 Once the libraries are installed, include the following files:
 ```
