@@ -17,8 +17,8 @@ If you put this into a browser, it will return JSON formatted data containing th
 {"coord":{"lon":-122.09,"lat":37.67},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":61.5,"feels_like":60.67,"temp_min":57,"temp_max":66.2,"pressure":1020,"humidity":93},"visibility":11265,"wind":{"speed":6.93,"deg":270},"clouds":{"all":1},"dt":1579996765,"sys":{"type":1,"id":4322,"country":"US","sunrise":1579965455,"sunset":1580001801},"timezone":-28800,"id":0,"name":"Hayward","cod":200}
 ```
 Using a browser is straight forward, but there are two hurdles to use an arduino
-1) how to send the url and
-2) how to parse the JSON data that is returned
+1) Sending the api url string to the website
+2) Parsing the JSON data that is returned
 
 **Sending an HTTP request (send the url) from Arduino**
 
@@ -27,7 +27,6 @@ Step 1)  Include the right libraries.  Arduino.cc has a good tutorial for instal
 #include <WiFiClient.h> // - https://www.arduino.cc/en/Reference/WiFiClient provides a good reference
 #include <WiFi.h>
 #include <WiFiManager.h> // - this is optional, but it's nice because it allows the end user to easily attach the device to his network.
-
 ```
 WiFiManager is available here and has great examples: https://github.com/zhouhan0126/WIFIMANAGER-ESP32  
 *I had to make a mod to get it to compile in Arduino on an ESP32 board. The mod was to change all instances of HTTP_HEAD[] to HTTP_HEAD_HTML[] in both the WifiManager.cpp and WiFiManager.h files.  It was fine in Platform IO without any modifications.*
@@ -60,3 +59,4 @@ Step 2)  Connect to the network and send the api request in a url.
   client.print("Connection: close\r\n\r\n");
 ```  
 
+**Parsing the returned JSON data**
