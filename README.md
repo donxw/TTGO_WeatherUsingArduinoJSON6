@@ -6,7 +6,7 @@ Purchase:  https://www.aliexpress.com/item/33048962331.html?spm=a2g0o.productlis
 
 This code will demonstrate a very basic program that retrieves weather from openweathermap.org and parses the resulting data using ArduinoJson 6 and displays it onto a TFT Display.
 
-Section 1:  Getting Weather data
+**Section 1:  Getting Weather data**  
 The weather data is available through api.openweathermap.org.  To get weather data sent to your code, you will need an api key.  Go to https://openweathermap.org/api, scroll to the bottom and follow the instructions to get started.  The site provides a lot of useful examples on how to structure your weather request here:  https://openweathermap.org/current
 
 I used the request URL using Zipcode:  Sample from the website -  http://samples.openweathermap.org/data/2.5/weather?zip=94040,us&appid=b6907d289e10d714a6e88b30761fae22
@@ -20,13 +20,13 @@ Using a browser is straight forward, but there are two hurdles to use an arduino
 1) how to send the url and
 2) how to parse the JSON data that is returned
 
--- Send an HTTP request from arduino
+**Sending an HTTP request (send the url) from Arduino**
 
 Step 1)  Include the right libraries.  Arduino.cc has a good tutorial for installing libraries.  For and ESP32 TTGOI used:
 '''
-- WiFiClient.h // - https://www.arduino.cc/en/Reference/WiFiClient provides a good reference
-- WiFi.h
-- WiFiManager.h // - this is optional, but it's nice because it allows the end user to easily attach the device to his network.  It's available here:  https://github.com/zhouhan0126/WIFIMANAGER-ESP32 but I had to make a mod to get it to compile in Arduino on an ESP32 board. The mod was to change all instances of HTTP_HEAD[] to HTTP_HEAD_HTML[] in both the WifiManager.cpp and WiFiManager.h files.  It was fine in Platform IO without any modifications. 
+#include <WiFiClient.h> // - https://www.arduino.cc/en/Reference/WiFiClient provides a good reference
+#include <WiFi.h>
+#include <WiFiManager.h> // - this is optional, but it's nice because it allows the end user to easily attach the device to his network.  It's available here:  https://github.com/zhouhan0126/WIFIMANAGER-ESP32 but I had to make a mod to get it to compile in Arduino on an ESP32 board. The mod was to change all instances of HTTP_HEAD[] to HTTP_HEAD_HTML[] in both the WifiManager.cpp and WiFiManager.h files.  It was fine in Platform IO without any modifications. 
 '''
 
 Step 2)  Connect to the network and send the url.
