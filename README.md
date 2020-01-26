@@ -22,7 +22,7 @@ Here is how you can get the JSON data into an Arduino project.  There are two st
 ---
 **Sending an HTTP request (send the url) from Arduino**
 
-Step 1)  Include the right libraries.  Arduino.cc has a good tutorial for installing libraries.  For and ESP32 TTGOI used:
+Step 1)  Include the right libraries.  Arduino.cc has a good tutorial for installing libraries.
 ```
 #include <WiFiClient.h> // - https://www.arduino.cc/en/Reference/WiFiClient provides a good reference
 #include <WiFi.h>
@@ -38,7 +38,7 @@ Step 2)  Connect to the network and send the api request in a url.
   wifiManager.autoConnect("AutoConnectAP");
 ```  
 
-* Sending the url is trickier - the arduino WiFiClient reference above does a good job.  I used the example from Benoit Blanchon at arduinojason.org.  
+* Sending the url is trickier - the arduino WiFiClient reference https://www.arduino.cc/en/Reference/WiFiClient does a good job of teaching this. 
 
 - initialize the client before the setup() code
 ```
