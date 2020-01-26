@@ -124,6 +124,10 @@ const size_t capacity = JSON_ARRAY_SIZE(1) + JSON_OBJECT_SIZE(1) + 2*JSON_OBJECT
 ```
 Change 2:  this line of code needs to change as follows:
 ```
+/**** Comment out or delete this line  *********************/
+//const char* json = "{\"coord\":{\"lon\":-122.09,\"lat\":37.67},\"weather\":[{\"id\":800,\"main\":\"Clear\",\"description\":\"clear sky\",\"icon\":\"01d\"}],\"base\":\"stations\",\"main\":{\"temp\":61.5,\"feels_like\":60.67,\"temp_min\":57,\"temp_max\":66.2,\"pressure\":1020,\"humidity\":93},\"visibility\":11265,\"wind\":{\"speed\":6.93,\"deg\":270},\"clouds\":{\"all\":1},\"dt\":1579996765,\"sys\":{\"type\":1,\"id\":4322,\"country\":\"US\",\"sunrise\":1579965455,\"sunset\":1580001801},\"timezone\":-28800,\"id\":0,\"name\":\"Hayward\",\"cod\":200}";
+
+/**** Change this line to parse client instead of json  ****/
 //deserializeJson(doc, json);  //from this
 deserializeJson(doc, client);  //to this.  You want to parse the data the client recieved.
 ```
