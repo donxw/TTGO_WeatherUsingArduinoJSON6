@@ -1,10 +1,6 @@
-
-// ArduinoJson - arduinojson.org
-// Copyright Benoit Blanchon 2014-2019
-// MIT License
-//
-// This example shows how to parse a JSON document in an HTTP response.
-// The program reads the weather once and displays it to the TTGO built in screen.
+// Basic Example to demonstrate getting JSON formatted data, parsing and displaying on a TFT screen
+// This example shows how to parse a JSON document from an HTTP response.
+// The program reads the weather data once and displays it to the TTGO built in screen.
 // 
 //
 // Step 1:  get a sample of the expected json file using your brower
