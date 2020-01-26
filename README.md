@@ -23,11 +23,14 @@ Using a browser is straight forward, but there are two hurdles to use an arduino
 **Sending an HTTP request (send the url) from Arduino**
 
 Step 1)  Include the right libraries.  Arduino.cc has a good tutorial for installing libraries.  For and ESP32 TTGOI used:
-'''
+```
 #include <WiFiClient.h> // - https://www.arduino.cc/en/Reference/WiFiClient provides a good reference
 #include <WiFi.h>
-#include <WiFiManager.h> // - this is optional, but it's nice because it allows the end user to easily attach the device to his network.  It's available here:  https://github.com/zhouhan0126/WIFIMANAGER-ESP32 but I had to make a mod to get it to compile in Arduino on an ESP32 board. The mod was to change all instances of HTTP_HEAD[] to HTTP_HEAD_HTML[] in both the WifiManager.cpp and WiFiManager.h files.  It was fine in Platform IO without any modifications. 
-'''
+#include <WiFiManager.h> // - this is optional, but it's nice because it allows the end user to easily attach the device to his network.
+/* It's available here:  https://github.com/zhouhan0126/WIFIMANAGER-ESP32 but I had to make a mod to get it to compile in Arduino 
+on an ESP32 board. The mod was to change all instances of HTTP_HEAD[] to HTTP_HEAD_HTML[] in both the WifiManager.cpp and 
+WiFiManager.h files.  It was fine in Platform IO without any modifications. */
+```
 
 Step 2)  Connect to the network and send the url.
 - Connecting to the network is just these two lines in the setup() code:
