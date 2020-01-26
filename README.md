@@ -116,6 +116,7 @@ const char* name = doc["name"]; // "Hayward"
 int cod = doc["cod"]; // 200
 ```
 5) Tweaking the code from the assistant.  You will need to make two mandatory and one optional change to the code:  
+
 Change 1:  add more padding to the variable capacity:
 ```
 // update the padding from 280 to 1333 per the recommended size for Visual Studio x64
