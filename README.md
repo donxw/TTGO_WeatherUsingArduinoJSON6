@@ -233,7 +233,7 @@ And now the weather variables can be displayed onto the screen.  There are a lar
 ## Summary
 This example just scratches the surface, but is enough to get a basic program capable of obtaining data from a website through an API URL, parse the resulting JSON data then display it on a TFT screen.
 
-I have posted a STEP file and 3D printable files for a case to put the TTGO into.  It is large enough to fit a battery.
+I have posted a STEP file and 3D printable files for a general purpose case to put the TTGO-T-Display board into.  It is large enough to fit a battery.
 
 ![TTGO_Case](https://user-images.githubusercontent.com/31633408/73142769-70f23a80-4047-11ea-9125-430c8c5537b1.JPG)
 
