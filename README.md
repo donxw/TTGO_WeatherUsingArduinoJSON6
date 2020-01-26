@@ -61,6 +61,7 @@ Step 2)  Connect to the network and send the api request in a url.
 - if all went well, the client variable will receive and store the JSON data returned from api.openweathermap.org. The next step is extracting this data and assigning it to variables that can be used.
 ---
 **Parsing the returned JSON data to Arduino variables**  
+
 This next step heavily relies on the the JSON Assistant located here:  https://arduinojson.org/v6/assistant/.  This assistant can generate all the code needed to parse the returned JSON data within the client variable by providing a sample of the JSON data.  Here is one way to do it:  
 1)  as shown above, manually entering the api url into a browser returns the JSON data to the browser window.  Copy this data.
 2)  navigate to the JSON Assistant - https://arduinojson.org/v6/assistant/
