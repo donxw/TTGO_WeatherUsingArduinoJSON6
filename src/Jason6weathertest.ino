@@ -65,7 +65,7 @@ char *servername = "api.openweathermap.org"; // remote server we will connect to
 //String ZipCode = "73104,us"; //OKC
 String ZipCode = "94304,us"; //Palo Alto
 //String ZipCode = "94541,us"; //Hayward
-String APIKEY = "122c8b5cd4731038ff78486f1faa70c5";
+String APIKEY = "xxxEnterYourAPIKeyHerexxx";
 
 WiFiClient client;
 const int httpPort = 80;
