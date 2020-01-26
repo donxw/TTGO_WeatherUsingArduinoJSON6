@@ -118,7 +118,7 @@ int cod = doc["cod"]; // 200
 ```
 5) Tweak the code from the assistant.  You will need to make two mandatory and one optional change to the code:  
 
-Change 1:  add more padding to the variable capacity:
+Change 1:  add more padding to the variable "capacity":
 ```
 // update the padding from 280 to 1333 per the recommended size for Visual Studio x64
 const size_t capacity = JSON_ARRAY_SIZE(1) + JSON_OBJECT_SIZE(1) + 2*JSON_OBJECT_SIZE(2) + JSON_OBJECT_SIZE(4) + JSON_OBJECT_SIZE(5) + JSON_OBJECT_SIZE(6) + JSON_OBJECT_SIZE(13) + 1333;  
