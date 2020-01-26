@@ -195,6 +195,37 @@ Creating custom fonts can be done at several websites with online tools and with
 * http://www.rinkydinkelectronics.com/t_make_font_file.php
 * https://github.com/adafruit/Adafruit-GFX-Library
 
+Once the library files are updated with the custom fonts, they will automatically be included in the <TFT_eSPI.h> file provided the GFXFF flag is set as follows:
 
+```
+//custom fonts - must be located in the library under  "TFT_eSPI\Fonts\Custom" folder
+// a #include must also be added to the "User_Custom_Fonts.h" file in the "TFT_eSPI\User_Setups" folder.
+// Stock font and GFXFF reference handle
+#define GFXFF 1  //switches on including the custom font files
+#define FF18 &FreeSans12pt7b  //these defines are optional, but they reduce typing when the fonts are used
+#define CF_CG16 &Crafty_Girls_Regular_16  
+#define CF_CG20 &Crafty_Girls_Regular_20
+```
 
+The current font is set when the display is initialized.
+```
+  //************************************* Initialize the Screen **************************************************
+  tft.init();
+  tft.setRotation(1);                       // set rotation 
+  tft.setTextColor(TFT_WHITE, TFT_RED);     // Set font color, white font, red background
+  tft.fillScreen(TFT_RED);                  // Clear screen
+  tft.setFreeFont(CF_CG20);                 // Select the font:  for print and printf or with GFXFF
+  //***************************************************************************************************************
+
+```
+And now the weather variables can be displayed onto the screen.  There are a large number of ways to print, draw, show graphics which are well covered in the TTGO github site.  One of the simpler methods is to use the printf method, much as you would with Serial.  Here is one of many ways the weather can be displayed:
+
+```
+  //display the city name, temperature, humidity and description
+  tft.setCursor(8,20);
+  tft.printf("%s \n %sF %02d%% \n ", name, dtostrf(main_temp, 2, 1, tempchar), main_humidity);
+  tft.printf( "weather %s\n", weather_0_description);
+```
+
+This example just scratches the surface, but is enough to get a basic program which can get data from a website through an API URL, parse the resulting JSON data then display it on a TFT screen.
 
