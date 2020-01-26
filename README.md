@@ -227,5 +227,6 @@ And now the weather variables can be displayed onto the screen.  There are a lar
   tft.printf( "weather %s\n", weather_0_description);
 ```
 
+## Summary
 This example just scratches the surface, but is enough to get a basic program which can get data from a website through an API URL, parse the resulting JSON data then display it on a TFT screen.
 
