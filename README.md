@@ -13,9 +13,9 @@ I used the request URL using Zipcode:  Sample from the website -  http://samples
 
 The URL I used is this:  http://api.openweathermap.org/data/2.5/weather?zip=94541&units=imperial&APPID=122c8b5cd4731038ff78486f1faa70c5.
 If you put this into a browser, it will return JSON formatted data containing the current weather:
-
+```
 {"coord":{"lon":-122.09,"lat":37.67},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":61.5,"feels_like":60.67,"temp_min":57,"temp_max":66.2,"pressure":1020,"humidity":93},"visibility":11265,"wind":{"speed":6.93,"deg":270},"clouds":{"all":1},"dt":1579996765,"sys":{"type":1,"id":4322,"country":"US","sunrise":1579965455,"sunset":1580001801},"timezone":-28800,"id":0,"name":"Hayward","cod":200}
-
+```
 Using a browser is straight forward, but there are two hurdles to use an arduino
 1) how to send the url and
 2) how to parse the JSON data that is returned
