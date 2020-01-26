@@ -215,8 +215,8 @@ void setup()
   Serial.println(main_humidity);
   Serial.println(weather_0_description);
 
-  //tft.fillScreen(TFT_BLACK)
-  //tft.setTextColor(TFT_BLACK, TFT_WHITE);
+  tft.fillScreen(TFT_WHITE);
+  tft.setTextColor(TFT_BLACK, TFT_WHITE);  //Black Text on White Background
   tft.setCursor(8,20);
 
   //*********** Option 1 ********* this works the best:  convert float to string
