@@ -57,12 +57,12 @@ Step 2)  Connect to the network and send the api request in a url.
   client.print("Host: api.openweathermap.org\r\n");
   client.print("Connection: close\r\n\r\n");
 ```  
-- if all went well, the client variable will receive and store the JSON data returned from api.openweathermap.org. The next step is extracting this data and assigning it to variables that can be used.
+- if all went well, the client variable will receive and store the JSON data returned from api.openweathermap.org. The next step is extracting this data and assigning it to variables.
 ---
 **Parsing the returned JSON data to Arduino variables**  
 
-This next step heavily relies on the the JSON Assistant located here:  https://arduinojson.org/v6/assistant/.  This assistant can generate all the code needed to parse the returned JSON data within the client variable by providing a sample of the JSON data.  Here is one way to do it:  
-1)  as shown above, manually entering the api url into a browser returns the JSON data to the browser window.  Copy this data.
+This next step heavily relies on the the JSON Assistant located here:  https://arduinojson.org/v6/assistant/.  This assistant can generate all the code needed to parse the returned JSON data if you cut/paste a sample of the JSON data you would like parsed.  Here is one way to do it:  
+1)  as shown above, manually enter the api url into a browser.  The JSON data is returned to the browser window.  Copy this data.
 2)  navigate to the JSON Assistant - https://arduinojson.org/v6/assistant/
 3)  paste in the JSON data - example data:  
 {"coord":{"lon":-122.09,"lat":37.67},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"base":"stations","main":{"temp":61.5,"feels_like":60.67,"temp_min":57,"temp_max":66.2,"pressure":1020,"humidity":93},"visibility":11265,"wind":{"speed":6.93,"deg":270},"clouds":{"all":1},"dt":1579996765,"sys":{"type":1,"id":4322,"country":"US","sunrise":1579965455,"sunset":1580001801},"timezone":-28800,"id":0,"name":"Hayward","cod":200}
