@@ -138,3 +138,4 @@ Change 3:  optionally add error checking to the deserialization call:
     //return;  //uncommented to turn it into a hard fail instead of warning
   }
 ```
+## Section 2:  Displaying Weather Data to the TTGO-T-Display Built-in Screen  
