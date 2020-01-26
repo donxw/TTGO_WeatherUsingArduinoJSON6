@@ -17,7 +17,7 @@ If you put this into a browser with your own zip and API, it will return JSON fo
 ```
 *Take note of this returned JSON data, because it will be used later by an assistant program at https://arduinojson.org to create parsing code.*  
 
-Here is how to send a URL and recieve JSON data into an Arduino project.  
+### Here is how to send a URL and recieve JSON data into an Arduino project.  
 ---
 **Sending an HTTP request (send the url) from Arduino**
 
