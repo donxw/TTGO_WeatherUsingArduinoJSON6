@@ -71,7 +71,7 @@ void setup()
 
   //************************************* Initialize the Screen **************************************************
   tft.init();
-  tft.setRotation(1);                       // set rotation 
+  tft.setRotation(1);                       // set rotation 1 - 0 deg rotation, 2 - 90 deg, 3 - 180 deg, 4 - 270 deg
   tft.setTextColor(TFT_WHITE, TFT_RED);     // Set font color - white text on red
   tft.fillScreen(TFT_RED);                  // Clear screen
   tft.setFreeFont(CF_CG20);                 // Select the font:  for print and printf or with GFXFF
