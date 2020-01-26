@@ -38,7 +38,7 @@ Step 2)  Connect to the network and send the api request in a url.
   wifiManager.autoConnect("AutoConnectAP");
 ```  
 
-* Sending the url is trickier - the arduino WiFiClient reference https://www.arduino.cc/en/Reference/WiFiClient does a good job of teaching this. 
+* Sending the url is trickier - the arduino WiFiClient reference https://www.arduino.cc/en/Reference/WiFiClient does a good job of teaching this. The ArduinoJSON web site also has great examples:  https://arduinojson.org/v6/example/.
 
 - initialize the client before the setup() code
 ```
