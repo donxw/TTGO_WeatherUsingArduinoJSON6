@@ -5,7 +5,7 @@ Purchase:  https://www.aliexpress.com/item/33048962331.html?spm=a2g0o.productlis
 
 This code demonstrates a basic program that retrieves weather from openweathermap.org, parses the resulting data into variables then displays it onto the built in TFT Display on the TTGO ESP32 board.
 
-## Section 1:  Getting the Weather data and Parsing it to Arduino Variables you can use  
+## Section 1:  Getting the Weather data and Parsing it to Arduino Variables  
 The weather data is available through api.openweathermap.org.  To get weather data sent to your code, you will need an api key.  Go to https://openweathermap.org/api, scroll to the bottom and follow the instructions to get started.  The site provides a lot of useful examples on how to structure your weather request here:  https://openweathermap.org/current
 
 I used the request URL using Zipcode:  Sample from the website -  http://samples.openweathermap.org/data/2.5/weather?zip=94040,us&appid=b6907d289e10d714a6e88b30761fae22.  You can use this to get a sample JSON output from the site.
