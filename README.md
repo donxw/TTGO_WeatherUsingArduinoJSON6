@@ -61,7 +61,7 @@ Step 2)  Connect to the network and send the api request in a url.
 ---
 **Parsing the returned JSON data to Arduino variables**  
 
-This next step heavily relies on the the JSON Assistant located here:  https://arduinojson.org/v6/assistant/.  This assistant can generate all the code needed to parse the returned JSON data if you cut/paste a sample of the JSON data you would like parsed.  Here is one way to do it:  
+This next step heavily relies on the the JSON Assistant located here:  https://arduinojson.org/v6/assistant/.  This assistant can generate all the code needed to parse the returned JSON data from a sample of the JSON data you would like parsed.  Here is one way to do it:  
 1)  as shown above, manually enter the api url into a browser.  The JSON data is returned to the browser window.  Copy this data.
 2)  navigate to the JSON Assistant - https://arduinojson.org/v6/assistant/
 3)  paste in the JSON data - example data:  
