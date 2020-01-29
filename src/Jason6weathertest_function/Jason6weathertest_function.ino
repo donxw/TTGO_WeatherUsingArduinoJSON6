@@ -118,7 +118,9 @@ int main_humidity;
 WiFiClient client;
 const int httpPort = 80;
 
+/**** function prototype - optional for arduino code ****/
 void getWeather();
+/********************************************************/
 
 void setup()
 {
@@ -287,18 +289,17 @@ void loop()
   }
 }
 
+
+//****************** Get Weather Function **********************************************************************************
 void getWeather()
 {
-  //*************************************  Get Weather Function ***********************************************************
-
-  /*
-This function uses these following global variables
+/*
+This function uses these following global variables.  Declare them before the setup() code or in a config.h file.
 
     char *servername = "api.openweathermap.org"; // remote server we will connect to
     String ZipCode = "94304,us"; //Palo Alto
     String APIKEY = "yourapicodehere";
     const int httpPort = 80;
-
     char loc[] // to store char *name;  use strcpy(loc, name) to copy name to loc
     char weat[] // to store char *weather_0_description;
     float main_temp;
