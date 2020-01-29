@@ -6,7 +6,7 @@
 //
 //How to get the JSON parsing code
   // Step 1:  get a sample of the expected json file using your brower
-  // example from openweathermap.org:  api.openweathermap.org/data/2.5/weather?zip=73071,us&units=imperial&APPID=122c8b5cd4731038ff78486f1faa70c5
+  // example from openweathermap.org:  api.openweathermap.org/data/2.5/weather?zip=73071,us&units=imperial&APPID=xxxgetyourownapicode:)
   // cutpaste into arduinojason helper:  https://arduinojson.org/v6/assistant/
   //   {"coord":{"lon":-97.41,"lat":35.23},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04d"}],"base":"stations","main":{"temp":47.28,"pressure":1023,"humidity":34,"temp_min":44.6,"temp_max":50},
   //   "visibility":16093,"wind":{"speed":8.05,"deg":170},"clouds":{"all":75},"dt":1575317431,"sys":{"type":1,"id":5187,"country":"US","sunrise":1575292847,"sunset":1575328657},"timezone":-21600,"id":0,"name":"Norman","cod":200}
@@ -108,7 +108,7 @@ char *servername = "api.openweathermap.org"; // remote server we will connect to
 String ZipCode = "73104,us";                 //OKC
 //String ZipCode = "94304,us"; //Palo Alto
 //String ZipCode = "94541,us"; //Hayward
-String APIKEY = "122c8b5cd4731038ff78486f1faa70c5";
+String APIKEY = "yourapicodehere";
 
 char loc[80];   //to store char *name
 char weat[80]; //to store value from char *weather_0_description
@@ -296,7 +296,7 @@ This function uses these following global variables
 
     char *servername = "api.openweathermap.org"; // remote server we will connect to
     String ZipCode = "94304,us"; //Palo Alto
-    String APIKEY = "122c8b5cd4731038ff78486f1faa70c5";
+    String APIKEY = "yourapicodehere";
     const int httpPort = 80;
 
     char loc[] // to store char *name;  use strcpy(loc, name) to copy name to loc
