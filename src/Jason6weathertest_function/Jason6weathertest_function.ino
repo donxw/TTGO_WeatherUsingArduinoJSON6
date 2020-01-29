@@ -122,6 +122,8 @@ const int httpPort = 80;
 void getWeather();
 /********************************************************/
 
+// Setup Function *************************************************************************************************************
+
 void setup()
 {
   // Initialize Serial port
@@ -173,6 +175,8 @@ void setup()
   tft.printf("%s\n %.1fF %3i%%\n %s ", loc, main_temp, main_humidity, weat);
 
 }
+
+// Loop Function *************************************************************************************************************
 
 void loop()
 {
@@ -290,7 +294,7 @@ void loop()
 }
 
 
-//****************** Get Weather Function **********************************************************************************
+//****************** Get Weather Function (nearly all cut/paste from jsonarduino.org) ***************************************
 void getWeather()
 {
 /*
