@@ -1,6 +1,6 @@
 # How to use a TTGO-T-Display ESP32 board and ArduinoJason 6 library to display current weather
 
-This code demonstrates a basic program that retrieves weather from openweathermap.org, parses the resulting data into variables then displays it onto the built in TFT Display on the TTGO ESP32 board.  These topics are introduced:
+This code demonstrates a basic program that retrieves weather from openweathermap.org, parses the resulting data into variables then displays it onto the built in TFT Display on the TTGO ESP32 board.  These topics are lightly covered:
 * Using the ArduinoJSON Assistant
 * Get JSON data from openweather.org
 * Example use of wifimanager
