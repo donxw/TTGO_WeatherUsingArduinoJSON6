@@ -237,7 +237,7 @@ This example just scratches the surface, but is enough to get a basic program ca
 
 I posted a second program that makes the weather code a function then uses the built in buttons on the TTGO-T board to cycle through a set of zipcodes to report the weather for each.
 
-I have posted a STEP file and 3D printable files for a general purpose case to put the TTGO-T-Display board into.  It is large enough to fit a battery.
+I also posted a STEP file and 3D printable files for a general purpose case to put the TTGO-T-Display board into.  It is large enough to fit a battery.
 
 ![TTGO_Case](https://user-images.githubusercontent.com/31633408/73299642-70cb7980-41c4-11ea-9780-589656db571b.JPG)
 
