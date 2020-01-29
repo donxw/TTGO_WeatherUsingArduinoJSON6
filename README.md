@@ -227,9 +227,9 @@ And now the weather variables can be displayed onto the screen.  There are a lar
 
 ```
   //display the city name, temperature, humidity and description
-  tft.setCursor(8,20);
-  tft.printf("%s \n %sF %02d%% \n ", name, dtostrf(main_temp, 2, 1, tempchar), main_humidity);
-  tft.printf( "weather %s\n", weather_0_description);
+  tft.setCursor(10,40);
+  tft.printf("%s \n %.1fF %02d%% \n ", name, main_temp, main_humidity);
+  tft.printf("%s\n", weather_0_description);
 ```
 
 ## Summary
