@@ -2,6 +2,7 @@
 // Basic Example to demonstrate getting JSON formatted data, parsing and displaying on a TFT screen
 // This example puts the api url request and JSON parsing into a function that populates global varialbles with weather data.
 // The program also show how to use the built in button functions on the TTGO-T Display ESP32 board
+// This code is provided just for educational interest and fun.
 //
 //How to get the JSON parsing code
   // Step 1:  get a sample of the expected json file using your brower
